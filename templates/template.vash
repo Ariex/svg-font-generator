@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>@model.Title</title>
+    <link rel="stylesheet" href="@(model.FontFamily+'.css')">
+    <style>
+        body i::before {
+            font-family: '@model.FontFamily';
+            padding: 5px;
+            border: 1px solid #aeaeae;
+            margin-right: 5px;
+        }
+
+        body i {
+            display: inline-block;
+            width: 25%;
+            font-size: 22px;
+            font-style: normal;
+            line-height: 30px;
+            margin: 10px 0;
+        }
+
+        body i:hover{
+            background-color:rgb(227, 227, 227);
+        }
+    </style>
+</head>
+
+<body>
+    @model.Icons.forEach(function(m){
+        <i class='@model.ClassPrefix-@m.name'>.icon-@m.name</i>
+    })
+</body>
+
+</html>
